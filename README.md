@@ -5,11 +5,11 @@ You can download the file called Publish to your system and run the executable t
 Open the appSettings file and change the path of DefaultConnection to the 
 The port and url the api listens on will be displayed for usage and accessibility.
 
-### Build Link <a id='Build'>[https://drive.google.com/file/d/1zJbmiOHcT0GvvbbIlyOwe5JQCs8T2jOd/view?usp=drive_link](https://drive.google.com/drive/folders/1gXaH2h-WXmc_WveZVSsUtNHyEBIuRFQx?usp=sharing)</a>
+Build Link <a id='Build'>[https://drive.google.com/file/d/1zJbmiOHcT0GvvbbIlyOwe5JQCs8T2jOd/view?usp=drive_link](https://drive.google.com/drive/folders/1gXaH2h-WXmc_WveZVSsUtNHyEBIuRFQx?usp=sharing)</a>
 
-### Allocation URL - http://localhost:5000/api/marketplace/addallocation
+Allocation URL - http://localhost:5000/api/marketplace/addallocation
 
-### Order URL - http://localhost:5000/api/marketplace/order
+Order URL - http://localhost:5000/api/marketplace/order
 
 ## Edge Cases
 ### Assumptions
