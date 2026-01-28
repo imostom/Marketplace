@@ -13,7 +13,7 @@ Order URL - http://localhost:5000/api/marketplace/order
 
 ## Edge Cases
 ### Assumptions
-1. No external api was used
+1. No external api was used, it is assumed that the seller decides the rate.
 2. Partial fulfilment scenarios were not catered for - if the total available amount by the vendors isn't enough to fulfil the orders, a response is returned.
 
 ### Validations
