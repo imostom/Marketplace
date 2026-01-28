@@ -5,3 +5,11 @@ VALUES
 (newid(),'VENDOR_C', 'USD', 'EUR', 1.28, 10000,getdate()),
 (newid(),'VENDOR_D', 'USD', 'GBP', 0.86, 8000,getdate()),
 (newid(),'VENDOR_E', 'USD', 'GBP', 0.84, 6000,getdate());
+
+
+
+SELECT * FROM Inventory with(nolock) order by vendorid asc
+
+
+truncate table Inventory
+

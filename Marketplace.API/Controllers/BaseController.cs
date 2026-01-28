@@ -49,20 +49,26 @@ namespace Marketplace.API.Controllers
 
             var invalidCodes = new[]
             {
-                ((int)ResponseCodes.Invalid_Amount).ToString(),
-                ((int)ResponseCodes.Invalid_Account).ToString(),
-                ((int)ResponseCodes.Invalid_OrderDirection).ToString()
+                ((int)ResponseCodes.Invalid_Amount).ToString("D2"),
+                ((int)ResponseCodes.Invalid_Account).ToString("D2"),
+                ((int)ResponseCodes.Invalid_OrderDirection).ToString("D2")
             };
 
-            if (result.ResponseCode == ((int)ResponseCodes.Success).ToString("D2"))
+            var okCodes = new[]
+            {
+                 ((int)ResponseCodes.Success).ToString(),
+                  ((int)ResponseCodes.Not_Found).ToString()
+            };
+
+            if (okCodes.Contains(result.ResponseCode))
             {
                 return Ok(result);
             }
-            else if (result.ResponseCode == ((int)ResponseCodes.Created).ToString())
+            else if (result.ResponseCode == ((int)ResponseCodes.Created).ToString("D2"))
             {
                 return Created("", result);
             }
-            else if (result.ResponseCode == ((int)ResponseCodes.Security_Violation).ToString())
+            else if (result.ResponseCode == ((int)ResponseCodes.Security_Violation).ToString("D2"))
             {
                 return Unauthorized(result);
             }

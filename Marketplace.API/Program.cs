@@ -3,6 +3,8 @@ using Marketplace.API.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddHttpClient();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
@@ -30,7 +32,7 @@ if (Convert.ToBoolean(configuration["EnableSwagger"]))
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors("AllowAll");
 app.UseAuthorization();
 app.UseMiddleware<ApiKeyMiddleware>();
 

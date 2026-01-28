@@ -1,4 +1,5 @@
 ﻿using LotusBank.CommunityUmmah.Application.DTOs.Request;
+using LotusBank.CommunityUmmah.Application.DTOs.Response;
 using Marketplace.Core.Common.Models;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,6 @@ namespace Marketplace.Application.Interfaces
 {
     public interface IMarketplaceService
     {
-        Task<GenericResponseModel<Guid>> AddInventory(AddInventoryRequest request);
+        Task<GenericResponseModel<AddInventoryResponse>> AddInventory(AddInventoryRequest request);
     }
 }

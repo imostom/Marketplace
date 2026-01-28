@@ -54,12 +54,12 @@ namespace Marketplace.API.Middleware
                     return;
                 }
 
-                if (extractedApiKey[0].Split(' ')[1] == null || extractedApiKey != apiKey)
+                if (string.IsNullOrEmpty(extractedApiKey) || extractedApiKey != apiKey)
                 {
                     _logger.LogInformation($"AuthenticationMiddleware - Invalid token provided");
 
                     response.ResponseCode = ((int)ResponseCodes.Security_Violation).ToString("D2");
-                    response.ResponseMessage = "Token isn't provided";
+                    response.ResponseMessage = "Invalid token provided";
 
                     context.Response.StatusCode = 401;
                     await context.Response.WriteAsJsonAsync(response);

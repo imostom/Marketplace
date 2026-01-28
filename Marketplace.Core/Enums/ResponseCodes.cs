@@ -13,7 +13,7 @@ namespace Marketplace.Core.Enums
         Success = 00,
 
         [Description("Created")]
-        Created = 00,
+        Created = 01,
 
         [Description("Invalid Order Direction")]
         Invalid_OrderDirection = 06,

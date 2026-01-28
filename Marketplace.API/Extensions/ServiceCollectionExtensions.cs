@@ -21,6 +21,7 @@ namespace Marketplace.API.Extensions
             services.AddSingleton<ILoggerManager, LoggerManager>();
             services.AddSingleton<RemoteDetails>();
             services.AddSingleton<DapperContext>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddScoped<IDapperRepository, DapperRepository>();
             services.AddScoped<IMarketplaceService, MarketplaceService>();

@@ -25,7 +25,7 @@ namespace Marketplace.API.Controllers
         } 
 
 
-        [HttpPost("addinventory")]
+        [HttpPost("addallocation")]
         public async Task<IActionResult> AddInventory([FromBody] AddInventoryRequest request)
         {
             var result = await CustomResponse(await _marketplaceService.AddInventory(request));

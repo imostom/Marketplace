@@ -7,6 +7,8 @@ namespace Marketplace.Core.Interfaces.Repositories
     {
         Task<Guid> AddInventory(Inventory request);
         Task<List<Inventory>> GetInventory();
-        Task<List<Inventory>> GetInventory(Guid inventoryID);
+        Task<Inventory> GetInventory(Guid inventoryID, string vendor, string baseCurrency);
+        Task<Inventory> GetInventory(string vendor, string baseCurrency, string quoteCurrency);
+        Task<Guid> UpdateInventory(Inventory inventory);
     }
 }
