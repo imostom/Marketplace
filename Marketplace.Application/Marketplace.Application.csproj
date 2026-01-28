@@ -14,9 +14,4 @@
     <ProjectReference Include="..\Marketplace.Core\Marketplace.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Mappers\" />
-  </ItemGroup>
-
 </Project>

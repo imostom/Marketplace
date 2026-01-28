@@ -1,4 +1,6 @@
-﻿using Marketplace.Core.Common.Models;
+﻿using Marketplace.Application.Interfaces;
+using Marketplace.Application.Services;
+using Marketplace.Core.Common.Models;
 using Marketplace.Core.Interfaces;
 using Marketplace.Core.Interfaces.Repositories;
 using Marketplace.Infrastructure.Data.Context;

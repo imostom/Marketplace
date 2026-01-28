@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Marketplace.Core.Common.Constants
+namespace Marketplace.Core.Enums
 {
-    public class AppConstants
+    public enum OrderDirection
     {
-        public static string ApiKey = "ApiKey";
+        Buy = 1,
+        Sell = 2
     }
 }

@@ -1,3 +1,6 @@
+using Marketplace.API.Extensions;
+using Marketplace.API.Middleware;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddCors(options =>
@@ -29,6 +32,7 @@ if (Convert.ToBoolean(configuration["EnableSwagger"]))
 }
 
 app.UseAuthorization();
+app.UseMiddleware<ApiKeyMiddleware>();
 
 app.MapControllers();
 

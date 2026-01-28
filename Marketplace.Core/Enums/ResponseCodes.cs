@@ -12,8 +12,14 @@ namespace Marketplace.Core.Enums
         [Description("Success")]
         Success = 00,
 
-        [Description("invalid Account")]
-        invalid_Account = 07,
+        [Description("Created")]
+        Created = 00,
+
+        [Description("Invalid Order Direction")]
+        Invalid_OrderDirection = 06,
+
+        [Description("Invalid Account")]
+        Invalid_Account = 07,
 
         [Description("Invalid Amount")]
         Invalid_Amount = 13,
