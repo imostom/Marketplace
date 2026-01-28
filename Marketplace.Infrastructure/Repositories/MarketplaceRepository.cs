@@ -1,21 +1,15 @@
-﻿using Azure.Core;
-using Dapper;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Marketplace.Core.Interfaces.Repositories;
-using Marketplace.Core.Interfaces;
-using Newtonsoft.Json;
+﻿using Dapper;
 using Marketplace.Core.Common.Models;
-using Microsoft.Extensions.Options;
 using Marketplace.Core.Entities;
+using Marketplace.Core.Interfaces;
+using Marketplace.Core.Interfaces.Repositories;
+using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
+using System.Data;
 
 namespace Marketplace.Infrastructure.Repositories
 {
-    public class MarketplaceRepository (ILoggerManager logger, IDapperRepository repository, IOptions<AppSettings> appSettings) : IMarketplaceRepository
+    public class MarketplaceRepository(ILoggerManager logger, IDapperRepository repository, IOptions<AppSettings> appSettings) : IMarketplaceRepository
     {
         private readonly ILoggerManager _logger = logger;
         private readonly IDapperRepository _repository = repository;

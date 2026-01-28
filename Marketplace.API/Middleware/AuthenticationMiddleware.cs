@@ -2,10 +2,6 @@
 using Marketplace.Core.Common.Models;
 using Marketplace.Core.Enums;
 using Marketplace.Core.Interfaces;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json;
 
 namespace Marketplace.API.Middleware
 {

@@ -1,16 +1,13 @@
 ﻿using Marketplace.Core.Common.Models;
 using Marketplace.Core.Enums;
 using Marketplace.Core.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Diagnostics;
-using System.Net;
-using System.Security.Cryptography.Xml;
 
 namespace Marketplace.API.Controllers
 {
-    public class    BaseController : ControllerBase
+    public class BaseController : ControllerBase
     {
         public RemoteDetails _remoteDetailsDTO;
         public ILoggerManager _loggerManger;
@@ -20,7 +17,7 @@ namespace Marketplace.API.Controllers
         public BaseController(RemoteDetails remoteDetailsDTO, IHttpContextAccessor httpContext, ILoggerManager loggerManger, IConfiguration config)
         {
             _config = config;
-            remoteDetailsDTO.IpAddress = httpContext.HttpContext.Connection.RemoteIpAddress.ToString();  
+            remoteDetailsDTO.IpAddress = httpContext.HttpContext.Connection.RemoteIpAddress.ToString();
             remoteDetailsDTO.Port = httpContext.HttpContext.Connection.RemotePort.ToString();
             remoteDetailsDTO.ApiKey = httpContext.HttpContext.Request.Headers["ApiKey"];
             remoteDetailsDTO.Path = httpContext.HttpContext.Request.Path.Value;
@@ -35,7 +32,7 @@ namespace Marketplace.API.Controllers
         {
             var apiKey = _config["AppSettings:ApiKey"];
 
-            if(apiKey!= _remoteDetailsDTO.ApiKey)
+            if (apiKey != _remoteDetailsDTO.ApiKey)
             {
                 result = new GenericResponseModel
                 {
@@ -56,8 +53,13 @@ namespace Marketplace.API.Controllers
 
             var okCodes = new[]
             {
-                 ((int)ResponseCodes.Success).ToString(),
-                  ((int)ResponseCodes.Not_Found).ToString()
+                 ((int)ResponseCodes.Success).ToString("D2"),
+                  ((int)ResponseCodes.Not_Found).ToString("D2"),
+                  ((int)ResponseCodes.Not_Found).ToString("D2"),
+                  ((int)ResponseCodes.Insufficient_Funds).ToString("D2"),
+                  ((int)ResponseCodes.Limit_Exceeded).ToString("D2"),
+                  ((int)ResponseCodes.Duplicate_Transaction).ToString("D2"),
+                  ((int)ResponseCodes.No_Vendor).ToString("D2"),
             };
 
             if (okCodes.Contains(result.ResponseCode))

@@ -1,9 +1,4 @@
 ﻿using Marketplace.Core.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Marketplace.Infrastructure.Logging
 {
@@ -61,6 +56,6 @@ namespace Marketplace.Infrastructure.Logging
         {
             logger.Warn(message);
         }
-       
+
     }
 }

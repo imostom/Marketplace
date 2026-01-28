@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace Marketplace.Core.Enums
 {
@@ -14,6 +9,9 @@ namespace Marketplace.Core.Enums
 
         [Description("Created")]
         Created = 01,
+
+        [Description("No Vendor Found")]
+        No_Vendor = 13,
 
         [Description("Invalid Order Direction")]
         Invalid_OrderDirection = 06,

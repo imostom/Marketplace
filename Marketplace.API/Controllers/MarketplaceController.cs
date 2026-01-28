@@ -1,9 +1,8 @@
 ﻿using LotusBank.CommunityUmmah.Application.DTOs.Request;
+using Marketplace.Application.DTOs.Request;
 using Marketplace.Application.Interfaces;
-using Marketplace.Application.Services;
 using Marketplace.Core.Common.Models;
 using Marketplace.Core.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Marketplace.API.Controllers
@@ -16,19 +15,26 @@ namespace Marketplace.API.Controllers
         private readonly RemoteDetails _remoteDetails;
         private readonly ILoggerManager _logger;
 
-        public MarketplaceController(RemoteDetails remoteDetails, IHttpContextAccessor context, IMarketplaceService marketplaceService, ILoggerManager logger, IConfiguration config) 
+        public MarketplaceController(RemoteDetails remoteDetails, IHttpContextAccessor context, IMarketplaceService marketplaceService, ILoggerManager logger, IConfiguration config)
             : base(remoteDetails, context, logger, config)
         {
             _logger = logger;
             _remoteDetails = remoteDetails;
             _marketplaceService = marketplaceService;
-        } 
+        }
 
 
         [HttpPost("addallocation")]
         public async Task<IActionResult> AddInventory([FromBody] AddInventoryRequest request)
         {
             var result = await CustomResponse(await _marketplaceService.AddInventory(request));
+            return result;
+        }
+
+        [HttpPost("order")]
+        public async Task<IActionResult> Order([FromBody] OrderRequest request)
+        {
+            var result = await CustomResponse(await _marketplaceService.Order(request));
             return result;
         }
     }

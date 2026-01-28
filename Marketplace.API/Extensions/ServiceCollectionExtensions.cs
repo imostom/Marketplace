@@ -15,7 +15,7 @@ namespace Marketplace.API.Extensions
         {
             services.AddRouting(options =>
             {
-                options.LowercaseUrls = true; 
+                options.LowercaseUrls = true;
             });
 
             services.AddSingleton<ILoggerManager, LoggerManager>();
