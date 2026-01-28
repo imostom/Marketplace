@@ -5,7 +5,7 @@ You can download the file called Publish to your system and run the executable t
 Open the appSettings file and change the path of DefaultConnection to the 
 The port and url the api listens on will be displayed for usage and accessibility.
 
-## Features <a id='Build'>https://drive.google.com/file/d/1zJbmiOHcT0GvvbbIlyOwe5JQCs8T2jOd/view?usp=drive_link</a>
+## Build Link <a id='Build'>https://drive.google.com/file/d/1zJbmiOHcT0GvvbbIlyOwe5JQCs8T2jOd/view?usp=drive_link</a>
 
 ## Edge Cases
 ### Assumptions
